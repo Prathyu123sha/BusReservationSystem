@@ -85,7 +85,7 @@ async function deleteBus(busId){
   return (
     <div>
     <div className='container'>
-    <h1>Feedback Crud app with hooks</h1>
+    <h1>bus  Crud app with hooks</h1>
     <div className='flex-row'>
       <div className='flex-large'>
         {editing ? (
@@ -144,3 +144,4 @@ async function deleteBus(busId){
 )}
 
 export default App;
+

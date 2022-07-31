@@ -62,8 +62,8 @@ return(
         props.productData.map((product)=>(
    */}
 
-  {props.bus?.length > 0 ? (
-   props.bus.map((bus)=>(
+  {props.busData?.length > 0 ? (
+   props.busData.map((bus)=>(
     <tr key={bus.busId}>
         <td>{bus.busId}</td>
         <td>{bus.arrivalTime}</td>
