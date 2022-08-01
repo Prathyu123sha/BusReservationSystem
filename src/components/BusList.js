@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react';
 import { useSelector,useDispatch} from 'react-redux';
 import { Link, Bus } from 'react-router-dom';
 import { Table} from'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 import {
     retrieveBuses,
@@ -42,7 +44,10 @@ export default function BusList(props){
 
 
 return(
-    <Table striped bordered hover variant="">
+    <Card style={{ backgroundColor: "lightblue" ,width: '69rem' }}>
+      <ListGroup variant="flush">
+<Table striped bordered hover variant=""  width={20}>
+    
 
     <thead>
         <tr>
@@ -92,7 +97,10 @@ return(
      )}
 
     </tbody>
+    
 </Table>
+</ListGroup>
+    </Card>
 
 
 
