@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { useSelector,useDispatch} from 'react-redux';
 import { Link, Bus } from 'react-router-dom';
+import { Table} from'react-bootstrap';
 
 import {
     retrieveBuses,
@@ -41,7 +42,8 @@ export default function BusList(props){
 
 
 return(
-<table>
+    <Table striped bordered hover variant="">
+
     <thead>
         <tr>
             <th>busId</th>
@@ -90,7 +92,7 @@ return(
      )}
 
     </tbody>
-</table>
+</Table>
 
 
 

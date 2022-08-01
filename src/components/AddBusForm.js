@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux';
 import { addBus } from '../actions/buses'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 import App from '../App';
 
 export default function AddBusForm(props){
@@ -55,6 +58,8 @@ setBus(initialFormState);
 }
 
 return (
+  <Card style={{backgroundColor: "#03a9f4" , width: '20rem' }}>
+      <ListGroup variant="flush">
    <Form onSubmit={submitHandler} >
      <Form.Group className="mb-3" controlId="formBasicbusId">
        <Form.Label>bus Id</Form.Label>
@@ -67,7 +72,7 @@ return (
 
      <Form.Group className="mb-3" controlId="formBasicarrivalTime">
        <Form.Label>arrivalTime</Form.Label>
-       <Form.Control type="time" placeholder="arrivalTime" 
+       <Form.Control type="time" placeholder="arrivalTime" required
         name='arrivalTime'
         value={bus.arrivalTime}
        onChange={handleInputChange} />
@@ -75,7 +80,7 @@ return (
 
      <Form.Group className="mb-3" controlId="formbasicavaiableSeats">
        <Form.Label>avaiableSeats</Form.Label>
-       <Form.Control type="number" placeholder="avaialableSeats"
+       <Form.Control type="number" placeholder="avaialableSeats" required
        name='availableSeats'
        value={bus.availableSeats}
        onChange={handleInputChange} />
@@ -83,7 +88,7 @@ return (
 
      <Form.Group className="mb-3" controlId="formBasicbusName">
        <Form.Label>busName</Form.Label>
-       <Form.Control type="text" placeholder="busName" 
+       <Form.Control type="text" placeholder="busName"  required
         name='busName'
         value={bus.busName}
        onChange={handleInputChange} />
@@ -117,7 +122,7 @@ return (
      
      <Form.Group className="mb-3" controlId="formBasicdepartureTime">
        <Form.Label>departureTime</Form.Label>
-       <Form.Control type="time" placeholder="departureTime" 
+       <Form.Control type="time" placeholder="departureTime" required
         name='departureTime'
         value={bus.departureTime}
        onChange={handleInputChange} />
@@ -126,7 +131,7 @@ return (
      
      <Form.Group className="mb-3" controlId="formBasicdriverName">
        <Form.Label>driverName</Form.Label>
-       <Form.Control type="text" placeholder="driverName" 
+       <Form.Control type="text" placeholder="driverName"  required
         name='driverName'
         value={bus.driverName}
        onChange={handleInputChange} />
@@ -158,7 +163,7 @@ return (
 
      <Form.Group className="mb-3" controlId="formseats">
        <Form.Label>seats</Form.Label>
-       <Form.Control type="number" placeholder="seats" 
+       <Form.Control type="number" placeholder="seats" required
          name='seats'
          value={bus.seats}
        onChange={handleInputChange} />
@@ -168,5 +173,9 @@ return (
        Submit
      </Button>
    </Form>
+   </ListGroup>
+    </Card>
+   
+   
  );
 }

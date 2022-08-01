@@ -7,6 +7,9 @@ import apiClient from './http-common';
 import {BrowserRouter,Routes,Route,Link,useNavigate} from 'react-router-dom'
 import AddBusForm from './components/AddBusForm';
 import EditBusForm from './components/EditBusForm';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 function App() {
   
 const [buses,setBuses]=useState([]);
@@ -85,7 +88,7 @@ async function deleteBus(busId){
   return (
     <div>
     <div className='container'>
-    <h1>bus  Crud app with hooks</h1>
+    <h1 style={{ color: "blue" }}>bus Form</h1>
     <div className='flex-row'>
       <div className='flex-large'>
         {editing ? (
@@ -98,7 +101,8 @@ async function deleteBus(busId){
            />
            </div>):(
     <BrowserRouter>
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
+    
+    <nav className="navbar navbar-expand navbar-dark bg-info">
         <a href="/buses" className="navbar-brand">
           React App
         </a>
@@ -132,8 +136,9 @@ async function deleteBus(busId){
          <Route path="/buses/:busId" element={<EditBusForm /> }></Route>
         </Routes>
       </div>
-    
+      
     </BrowserRouter>
+
     )}
     </div>
     </div>
